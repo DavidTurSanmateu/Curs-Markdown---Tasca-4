@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2-gestio/">
+      
+      
+        <link rel="next" href="../4-exemples/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Lectura i escriptura de fitxers - Curs Markdown - Tasca 4</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto,+sans-serif:300,300i,400,400i,700,700i%7CCourier+New,+monospace:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto, sans-serif";--md-code-font:"Courier New, monospace"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/print-site.css">
+    
+      <link rel="stylesheet" href="../css/print-site-material.css">
+    
+      <link rel="stylesheet" href="../css/styles.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-lectura-i-escriptura-de-fitxers" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Curs Markdown - Tasca 4" class="md-header__button md-logo" aria-label="Curs Markdown - Tasca 4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Curs Markdown - Tasca 4
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lectura i escriptura de fitxers
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode oscur"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode oscur" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Canvia a mode clar"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canvia a mode clar" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Curs Markdown - Tasca 4" class="md-nav__button md-logo" aria-label="Curs Markdown - Tasca 4" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Curs Markdown - Tasca 4
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitat 7 - Entrada/eixida
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../objectius/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Objectius
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unitat 7 - Entrada/eixida
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unitat 7 - Entrada/eixida
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-introduccio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-gestio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestió de fitxers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectura i escriptura de fitxers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lectura i escriptura de fitxers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-fitxers-orientats-a-caracter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Fitxers orientats a caràcter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-lectura-de-fitxer-classe-bufferedreader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Lectura de fitxer (classe BufferedReader)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-escriptura-en-fitxer-classe-bufferedwriter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Escriptura en fitxer (classe BufferedWriter)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Escriptura en fitxer (classe BufferedWriter)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-conversio-de-valors-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1. Conversió de valors a String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-necessitat-de-close-i-try-with-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2. Necessitat de close() i try-with-resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-exemple-complet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3. Exemple complet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-exemples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exemples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-exercicis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exercicis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-fitxers-orientats-a-caracter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Fitxers orientats a caràcter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-lectura-de-fitxer-classe-bufferedreader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Lectura de fitxer (classe BufferedReader)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-escriptura-en-fitxer-classe-bufferedwriter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Escriptura en fitxer (classe BufferedWriter)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3. Escriptura en fitxer (classe BufferedWriter)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331-conversio-de-valors-a-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.1. Conversió de valors a String
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332-necessitat-de-close-i-try-with-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.2. Necessitat de close() i try-with-resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#333-exemple-complet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3.3. Exemple complet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="3-lectura-i-escriptura-de-fitxers">3. Lectura i escriptura de fitxers</h1>
+<p>Normalment les aplicacions que utilitzen arxius no estan centrades en la gestió del sistema d'arxius del seu ordinador. L'objectiu principal d'usar fitxers és poder emmagatzemar dades de manera que entre diferents execucions del programa, fins i tot en diferents equips, siga possible recuperar-les. El cas més típic és un editor de documents, que mentre s'executa s'encarrega de gestionar les dades relatives al text que està escrivint, però en qualsevol moment pot guardar-lo en un arxiu per a poder recuperar aquest text en qualsevol moment posterior, i afegir altres nous si fos necessari. El fitxer amb les dades del document el pot obrir tant en l'editor del seu ordinador com en el d'un altre company o companya.</p>
+<p>Per a saber com tractar les dades d'un fitxer en un programa, cal tenir molt clar com s'estructuren. Dins d'un arxiu es poden emmagatzemar tot tipus de valors de qualsevol mena de dades. La part més important és que aquests valors s'emmagatzemen en forma de seqüència, un darrere l'altre. Per tant, com aviat veureu, la forma més habitual de tractar fitxers és seqüencialment, de manera semblant a com es fa per a llegir-les del teclat, mostrar-les per pantalla o recórrer les posicions d'un array.</p>
+<p><strong>ATENCIÓ</strong>:</p>
+<p>Es denomina <strong>accés seqüencial</strong> al processament d'un conjunt d'elements de manera que només és possible accedir a ells d'acord amb la seva ordre d'aparició. Per a processar un element és necessari processar primer tots els elements anteriors.</p>
+<p>Java, juntament amb altres llenguatges de programació, diferencia entre dos tipus d'arxius segons com es representen els valors emmagatzemats en un arxiu.</p>
+<p><strong>ATENCIÓ</strong>:</p>
+<p>En els <strong>fitxers orientats a caràcter</strong>, les dades es representen com una seqüència de cadenes de text, on cada valor es diferencia de l'altre mitjançant un delimitador. En canvi, en els <strong>fitxers orientats a byte</strong>, les dades es representen directament d'acord amb el seu format binari, sense cap separació.</p>
+<p>En aquesta unitat didàctica només veurem el processament de fitxers orientats a caràcter.</p>
+<h2 id="31-fitxers-orientats-a-caracter">3.1. Fitxers orientats a caràcter</h2>
+<p>Un fitxer orientat a caràcter no és més que un document de text, com el que es podria generar amb qualsevol editor de text simple. Els valors estan emmagatzemats segons la seva representació en cadena de text, exactament en el mateix format que s'ha utilitzat fins ara per a introduir dades des del teclat. De la mateixa manera, els diferents valors es distingeixen en estar separats entre ells amb un delimitador, que per defecte és qualsevol conjunt d'espais en blanc o salts de línia. Encara que aquests valors es puguin distribuir en línies de text diferents, conceptualment, es pot considerar que estan organitzats un darrere l'altre, seqüencialment, com les paraules en la pàgina d'un llibre.</p>
+<p>El següent podria ser el contingut d'un fitxer orientat a caràcter on hi ha deu valors de tipus real, 7 en la primera línia i 3 en la segona:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>1.5 0.75 -2.35 18 9.4 3.1416 -15.785  
+-200.4 2.56 9.3785  
+</code></pre></div></td></tr></table></div>
+<p>I aquest el d'un fitxer amb 4 valors de tipus String ("Hi", "havia", "una" i "vegada..."):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Hi havia una vegada...  
+</code></pre></div></td></tr></table></div>
+<p><strong>En un fitxer orientat a caràcter és possible emmagatzemar qualsevol combinació de dades de qualsevol tipus</strong> (int, double, boolean, String, etc.).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>7 10 20.5 16.99  
+Hi havia una vegada...  
+true false 2020 0.1234  
+</code></pre></div></td></tr></table></div>
+<p>El principal avantatge d'un fitxer d'aquest tipus és que resulta molt senzill inspeccionar el seu contingut i generar-lo d'acord amb les nostres necessitats.  </p>
+<p>Per al cas dels fitxers orientats a caràcter, cal utilitzar dues classes diferents segons si el que es vol és llegir o escriure dades en un arxiu. Normalment això no és molt problemàtic, ja que <strong>en un bloc de codi donat, només es duran a terme operacions de lectura o d'escriptura sobre un mateix arxiu, però no els dos tipus d'operació alhora</strong>.  </p>
+<p><strong>ATENCIÓ</strong>:</p>
+<p>Per a tractar de manera senzilla fitxers orientats a caràcter, Java proporciona les classes <strong>BufferedReader</strong> (per a lectura) i <strong>BufferedWriter</strong> (per a escriptura) del package <strong>java.io</strong>.</p>
+<h2 id="32-lectura-de-fitxer-classe-bufferedreader">3.2. Lectura de fitxer (classe BufferedReader)</h2>
+<p><strong>Una manera eficient de llegir dades des d'un fitxer orientat a caràcter és utilitzant la classe BufferedReader.</strong> Aquesta classe permet llegir el contingut d'un arxiu línia per línia de manera eficient, ja que emmagatzema en memòria un conjunt de caràcters per reduir el nombre d'accessos al disc.</p>
+<p>Per a processar dades des d'un arxiu, <strong>BufferedReader es crea a partir d'un objecte FileReader</strong>, que especifica la ruta a l'arxiu.</p>
+<p>Per exemple, per a crear un objecte de tipus <strong>BufferedReader</strong> de manera que permeta llegir dades des de l'arxiu situat en la ruta "C:\Programes\Unitat10\Document.txt", caldria fer:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="n">BufferedReader</span><span class="w"> </span><span class="n">lectorArxiu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">&quot;C:/Programes/Unitat10/Document.txt&quot;</span><span class="p">));</span>
+<span class="p">...</span>
+</code></pre></div></td></tr></table></div>
+<p>Una vegada instanciat l'objecte <strong>BufferedReader</strong>, podem utilitzar els seus mètodes per llegir el contingut de l'arxiu. El mètode més habitual és <strong>readLine()</strong>, que permet llegir una línia completa del fitxer i avança automàticament a la següent.</p>
+<p>És important entendre que <strong>BufferedReader gestiona internament un apuntador que indica sobre quin valor actuarà la següent operació de lectura</strong>. Inicialment, l'apuntador es troba a la primera línia de l'arxiu. <strong>Cada vegada que es crida readLine(), l'apuntador avança fins a la següent línia.</strong></p>
+<p><strong>És important recordar que readLine() retorna una cadena de text</strong>, que pot necessitar ser convertida al tipus de dada corresponent. Per exemple, per convertir una línia a un número enter, es pot utilitzar <strong>Integer.parseInt()</strong>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">String</span><span class="w"> </span><span class="n">linia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lectorArxiu</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Una vegada s'ha finalitzat la lectura de l'arxiu</strong>, ja siga tota o només una part, <strong>és imprescindible executar el mètode close()</strong>. Aquest mètode indica al sistema operatiu que l'arxiu ja no està sent utilitzat pel programa. Si no es crida a <strong>close()</strong>, el sistema operatiu pot mantenir el fitxer bloquejat durant un temps.</p>
+<p><strong>ATENCIÓ</strong>:</p>
+<p><strong>Sempre cal tancar els arxius amb close() quan s'ha acabat de llegir o escriure en ells.</strong></p>
+<p>Quan es crea un <strong>BufferedReader</strong>, cal tenir en compte que <strong>es pot llançar una excepció de tipus IOException si el fitxer no existeix o si hi ha algun problema en la lectura.</strong> Per tant, és necessari manejar aquesta excepció amb un bloqueig <strong>try-catch</strong>.</p>
+<p>El programa següent mostra un exemple de com llegir deu valors enters d'un arxiu anomenat "Enters.txt" situat en la carpeta de treball (hauria de ser la carpeta del projecte NetBeans). Per a provar-ho, crea l'arxiu i introdueix exactament 10 valors enters, un per línia.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileReader</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ProvesFitxers</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">NUM_VALORS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// Obrim el fitxer</span>
+<span class="w">            </span><span class="n">BufferedReader</span><span class="w"> </span><span class="n">lector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedReader</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileReader</span><span class="p">(</span><span class="s">&quot;Enters.txt&quot;</span><span class="p">));</span>
+
+<span class="w">            </span><span class="c1">// Llegim línia per línia</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">NUM_VALORS</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">linia</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lector</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">linia</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor llegit és: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">valor</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: L&#39;arxiu no té suficients línies.&quot;</span><span class="p">);</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">// Cal tancar el fitxer!</span>
+<span class="w">            </span><span class="n">lector</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// En cas d&#39;excepció mostrar l&#39;error</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">NumberFormatException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: El fitxer conté un format incorrecte.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Una diferència important a l'hora de tractar amb arxius respecte a llegir dades del teclat és que les operacions de lectura no són producte d'una interacció directa amb l'usuari, que és qui escriu les dades. Només es pot treballar amb les dades que hi ha en l'arxiu i res més. Això té dos efectes sobre el procés de lectura:</p>
+<ol>
+<li>
+<p><strong>Tipus de dades esperats</strong>: <strong>Quan es duu a terme el procés de lectura d'una seqüència de valors, sempre cal anar amb compte d'usar el mètode adequat per a interpretar el tipus de dada correcte.</strong> Per exemple, si esperem números enters, cal utilitzar <strong>Integer.parseInt()</strong> per convertir el text a un nombre. Cal anar amb compte, ja que si el fitxer té un format incorrecte, es llançarà una excepció <strong>NumberFormatException</strong>.</p>
+</li>
+<li>
+<p><strong>Comprovació de la disponibilitat de valors</strong>: <strong>També és necessari controlar que mai es llegisquen més valors dels que hi ha disponibles per a llegir.</strong> Intentar llegir una línia quan l'arxiu ja s'ha acabat retorna <strong>null</strong>. Per evitar errors, es pot utilitzar una estructura com un <strong>while</strong>, comprovant si la línia llegida és <strong>null</strong> abans de processar-la.</p>
+</li>
+</ol>
+<p>Per a veure-ho, intenta executar l'exemple anterior modificant l'arxiu de manera que algun dels valors no siguin de tipus sencer, o hi hagi menys de 10 línies.</p>
+<h2 id="33-escriptura-en-fitxer-classe-bufferedwriter">3.3. Escriptura en fitxer (classe BufferedWriter)</h2>
+<p>Per a escriure dades a un fitxer, anem a usar <code>BufferedWriter</code>. Per a instanciar un objecte d'esta classe, primer cal crear un objecte de la classe <strong>FileWriter</strong>, la qual té quatre constructors importants:</p>
+<ul>
+<li><strong>public FileWriter(File file)</strong></li>
+<li><strong>public FileWriter(File file, boolean append)</strong></li>
+<li><strong>public FileWriter(String fileName)</strong></li>
+<li><strong>public FileWriter(String fileName, boolean append)</strong></li>
+</ul>
+<p>Els primers dos constructors accepten un objecte <code>File</code>, mentre que els altres dos permeten passar la ruta directament com a <code>String</code>.</p>
+<p>Si el fitxer no existeix, es crearà automàticament. Però si ja existeix, el seu contingut s'esborrarà completament, deixant el fitxer amb grandària igual a 0, tret que s'use el mode "append".</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedWriter</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileWriter</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExempleEscriptura</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">File</span><span class="w"> </span><span class="n">fitxer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;C:/Programes/Unitat11/Document.txt&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">BufferedWriter</span><span class="w"> </span><span class="n">writer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedWriter</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="n">fitxer</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">writer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;Aquesta és una nova línia de text.&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">writer</span><span class="p">.</span><span class="na">newLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Afegim un salt de línia</span>
+<span class="w">            </span><span class="n">writer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;Escrivint amb BufferedWriter és més eficient!&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">writer</span><span class="p">.</span><span class="na">newLine</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error d&#39;escriptura: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>ATENCIÓ</strong>:</p>
+<p>Tant el constructor de <code>FileWriter</code>, com el de <code>BufferedWriter</code>, com el mètode <code>write()</code> poden llançar una excepció <code>IOException</code>.</p>
+<h3 id="331-conversio-de-valors-a-string">3.3.1. Conversió de valors a String</h3>
+<p>El mètode <code>write(int c)</code> escriu el caràcter Unicode associat al codi passat per paràmetre. Per exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">writer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;8&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Escriu el caràcter &#39;8&#39;</span>
+<span class="n">writer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="mi">65</span><span class="p">);</span><span class="w"> </span><span class="c1">// Escriu &#39;A&#39; (codi ASCII/Unicode 65)</span>
+</code></pre></div></td></tr></table></div>
+<p>Si es volen escriure nombres o altres tipus de dades, cal convertir-los a <code>String</code>, per exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">edat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">35</span><span class="p">;</span>
+<span class="n">writer</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">edat</span><span class="p">);</span><span class="w"> </span><span class="c1">// Escriu &quot;35&quot;</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="332-necessitat-de-close-i-try-with-resources">3.3.2. Necessitat de close() i try-with-resources</h3>
+<p>L'escriptura en fitxers pot realitzar-se de manera diferida pel sistema operatiu. Per a garantir que les dades es guarden correctament, és essencial cridar <code>close()</code> al final. A més, <code>close()</code> allibera el fitxer perquè altres programes puguen accedir-hi.</p>
+<p>Un enfocament més segur és usar <code>try-with-resources</code>, que tanca automàticament el <code>FileWriter</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">(</span><span class="n">FileWriter</span><span class="w"> </span><span class="n">fw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="s">&quot;Enters.txt&quot;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">&quot;Hola món!&quot;</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="333-exemple-complet">3.3.3. Exemple complet</h3>
+<p>El següent programa escriu un fitxer anomenat <code>Enters.txt</code> amb 20 nombres enters, començant per 1 i doblant cada vegada el valor anterior.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">java.io.BufferedWriter</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.FileWriter</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.io.IOException</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EscriureFitxer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">File</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;Enters.txt&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">FileWriter</span><span class="w"> </span><span class="n">fw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FileWriter</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// Mode append activat</span>
+<span class="w">            </span><span class="n">BufferedWriter</span><span class="w"> </span><span class="n">bw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BufferedWriter</span><span class="p">(</span><span class="n">fw</span><span class="p">);</span><span class="w"> </span><span class="c1">// Afegim BufferedWriter</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">valor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">            </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="n">bw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">valor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">valor</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">bw</span><span class="p">.</span><span class="na">newLine</span><span class="p">();</span><span class="w"> </span><span class="c1">// Escriu un salt de línia correcte segons el sistema operatiu</span>
+
+<span class="w">            </span><span class="c1">// Important: Tanquem BufferedWriter (tanca també FileWriter)</span>
+<span class="w">            </span><span class="n">bw</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Fitxer escrit correctament&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">IOException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">());</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>D'esta manera, el programa aniria afegint 20 nous nombres al final del fitxer en cada execució.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "navigation.sections", "navigation.top", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../js/print-site.js"></script>
+      
+    
+  </body>
+</html>

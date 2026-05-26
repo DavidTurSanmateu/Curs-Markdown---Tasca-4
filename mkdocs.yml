@@ -1,0 +1,50 @@
+site_name: Curs Markdown - Tasca 4
+docs_dir: md
+site_dir: docs
+extra_css:
+  - css/styles.css
+nav:
+    - Unitat 7 - Entrada/eixida: index.md
+    - Objectius: objectius.md
+    - Unitat 7 - Entrada/eixida:
+        - Introducció: 1-introduccio.md
+        - Gestió de fitxers: 2-gestio.md
+        - Lectura i escriptura de fitxers: 3-iofitxers.md
+        - Exemples: 4-exemples.md
+        - Exercicis: 5-exercicis.md
+theme:
+    name: 'material'
+    features:
+      - content.code.annotate
+      - navigation.sections
+      - navigation.top
+      - content.code.copy
+    font:
+        text: 'Roboto, sans-serif'
+        code: 'Courier New, monospace'
+    icon:
+        repo: 'fontawesome/brands/github'
+    palette:
+      - scheme: default
+        toggle:
+            icon: material/brightness-7 
+            name: Canvia a mode oscur
+
+      - scheme: slate
+        toggle:
+            icon: material/brightness-4
+            name: Canvia a mode clar
+plugins:
+  - search
+  - print-site
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
